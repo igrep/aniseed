@@ -5,8 +5,8 @@
 # Usage: ANISEED_EMBED_PREFIX=my-plugin-name deps/aniseed/scripts/compile.sh
 
 nvim --headless -u NONE \
-    -c "let &runtimepath = &runtimepath . ',deps/aniseed,' . getcwd()" \
-    -c "lua package.path = package.path .. ';$(pwd)/lua/?.lua;deps/aniseed/lua/?.lua'" \
+    -c "let &runtimepath = &runtimepath . ',deps/conjure,' . ',deps/aniseed,' . getcwd()" \
+    -c "lua package.path = package.path .. ';$(pwd)/lua/?.lua;deps/conjure/lua/?.lua;deps/aniseed/lua/?.lua'" \
     -c "lua require('aniseed.compile').glob('**/*.fnl', 'fnl', 'lua')" \
     +q
 
